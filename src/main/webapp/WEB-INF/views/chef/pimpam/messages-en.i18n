@@ -26,6 +26,13 @@ chef.pimpam.form.button.create = Create
 chef.pimpam.form.button.update = Update
 chef.pimpam.form.button.delete = Delete
 chef.pimpam.list.button.create = Create
+chef.pimpam.form.label.select.artifact = Artifact
+chef.pimpam.form.label.artifact=Artifact
+
+chef.pimpam.error.month.startPeriod = The start period must be greater than one month from the start of the pimpam
+chef.pimpam.error.week.finishPeriod = The finish period must be greater the one week from the start period
+chef.pimpam.error.budget=Budget must be positive
+chef.pimpam.not-able-currency = Currency is not valid
 
 any.arifact.list.button.create = Create
 chef.artifact.form.button.create = Create

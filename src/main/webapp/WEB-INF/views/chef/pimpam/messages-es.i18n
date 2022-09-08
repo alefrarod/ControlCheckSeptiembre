@@ -22,6 +22,13 @@ chef.pimpam.form.label.startPeriod=Comienzo periodo
 chef.pimpam.form.label.finishPeriod=Final periodo
 chef.pimpam.form.label.budget=Presupuesto
 chef.pimpam.form.label.link=Link
+chef.pimpam.form.label.select.artifact = Artifacto
+chef.pimpam.form.label.artifact=Artifacto
+
+chef.pimpam.error.month.startPeriod = El comienzo del periodo debe ser mayor a un mes desde la creación del pimpam
+chef.pimpam.error.week.finishPeriod = El final del periodo debe ser mayor a una semana desde el comienzo del periodo
+chef.pimpam.error.budget=El presupuesto tiene que ser positivo
+chef.pimpam.not-able-currency = La moneda no es válida
 
 any.arifact.list.button.create = Crear
 chef.artifact.form.button.create = Crear
