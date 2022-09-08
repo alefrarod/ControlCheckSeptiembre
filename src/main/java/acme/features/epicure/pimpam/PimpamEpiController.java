@@ -23,6 +23,15 @@ public class PimpamEpiController extends AbstractController<Epicure, Pimpam> {
 			@Autowired
 			protected PimpamEpiShowService	showService;
 			
+			@Autowired
+			protected PimpamEpicureCreateService	createService;
+			
+			@Autowired
+			protected PimpamEpicureUpdateService	updateService;
+			
+			@Autowired
+			protected PimpamEpicureDeleteService	deleteService;
+			
 
 			// Constructors -----------------------------------------------------------
 
@@ -31,6 +40,9 @@ public class PimpamEpiController extends AbstractController<Epicure, Pimpam> {
 			protected void initialise() {
 				super.addCommand("list", this.listService);
 				super.addCommand("show", this.showService);
+				super.addCommand("create", this.createService);
+				super.addCommand("update", this.updateService);
+				super.addCommand("delete", this.deleteService);
 			}
 
 }

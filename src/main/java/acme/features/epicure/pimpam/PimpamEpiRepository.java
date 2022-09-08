@@ -20,6 +20,15 @@ public interface PimpamEpiRepository extends AbstractRepository{
 	@Query("select a from Artifact a LEFT JOIN Pimpam c ON c.artifact=a WHERE c IS NULL")
 	List<Artifact> findArtifactList();
 	
+	@Query("select artifact from Artifact artifact")
+	List<Artifact> findAllArtifact();
+	
+	@Query("select artifact from Artifact artifact where artifact.id = :id")
+	Artifact findArtifactById(int id);
+	
+	@Query("select pimpam from Pimpam pimpam")
+	List<Pimpam> findAllPimpam();
+	
 	@Query("select a from Pimpam a where a.code = :code")
 	Pimpam findOnePimpamByCode(String code);
 

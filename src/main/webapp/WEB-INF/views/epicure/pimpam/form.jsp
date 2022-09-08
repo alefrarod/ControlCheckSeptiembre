@@ -16,13 +16,47 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 
+<jstl:choose>
+<jstl:when test="${isNew == true}">	
 <acme:form>
-	<acme:input-textbox code="epicure.pimpam.form.label.code" path="code" />
-	<acme:input-textbox code="epicure.pimpam.form.label.instantiationMoment" path="instantiationMoment" />
 	<acme:input-textbox code="epicure.pimpam.form.label.title" path="title" />
 	<acme:input-textbox code="epicure.pimpam.form.label.description" path="description" />
 	<acme:input-textbox code="epicure.pimpam.form.label.startPeriod" path="startPeriod" />
 	<acme:input-textbox code="epicure.pimpam.form.label.finishPeriod" path="finishPeriod" />
 	<acme:input-money code="epicure.pimpam.form.label.budget" path="budget" />
 	<acme:input-textbox code="epicure.pimpam.form.label.link" path="link" />
+	<acme:input-select code="epicure.pimpam.form.label.select.artifact" path="artifacts">
+				<jstl:forEach items="${artifacts}" var="artifact">
+					<acme:input-option code="${artifact.getCode()}" value="${artifact.getId()}" />
+				</jstl:forEach>
+			</acme:input-select>
+	
+	
+	<acme:submit code="epicure.pimpam.form.button.create" action="/epicure/pimpam/create"/>
 </acme:form>
+
+
+
+</jstl:when>
+
+
+<jstl:otherwise>	
+<acme:form >
+	<acme:input-textbox code="epicure.pimpam.form.label.code" path="code" readonly="true"/>
+	<acme:input-textbox code="epicure.pimpam.form.label.instantiationMoment" path="instantiationMoment" readonly="true"/>
+	<acme:input-textbox code="epicure.pimpam.form.label.title" path="title" />
+	<acme:input-textbox code="epicure.pimpam.form.label.description" path="description" />
+	<acme:input-textbox code="epicure.pimpam.form.label.startPeriod" path="startPeriod" />
+	<acme:input-textbox code="epicure.pimpam.form.label.finishPeriod" path="finishPeriod" />
+	<acme:input-money code="epicure.pimpam.form.label.budget" path="budget" />
+	<acme:input-textbox code="epicure.pimpam.form.label.link" path="link" />
+	<acme:button code="epicure.pimpam.form.label.artifact" action="/any/artifact/show?id=${artifactId}" />
+
+<jstl:if test="${artifactPublish == false}">
+<acme:submit code="epicure.pimpam.form.button.update" action="/epicure/pimpam/update"/>
+<acme:submit code="epicure.pimpam.form.button.delete" action="/epicure/pimpam/delete"/>
+</jstl:if>
+
+</acme:form>
+	</jstl:otherwise>
+</jstl:choose>

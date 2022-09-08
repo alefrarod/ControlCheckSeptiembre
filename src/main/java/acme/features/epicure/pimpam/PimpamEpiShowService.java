@@ -42,6 +42,8 @@ public class PimpamEpiShowService implements AbstractShowService<Epicure, Pimpam
 			
 				
 				request.unbind(entity, model, "code", "instantiationMoment", "title", "description", "startPeriod", "finishPeriod", "budget", "link");
+				model.setAttribute("artifactId", entity.getArtifact().getId());
+				model.setAttribute("artifactPublish", entity.getArtifact().isPublished());
 				model.setAttribute("isNew", false);
 				
 				

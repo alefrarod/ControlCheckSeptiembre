@@ -20,4 +20,8 @@
 	<acme:list-column code="epicure.pimpam.list.label.instantiationMoment" path="instantiationMoment" width="20%"/>
 	<acme:list-column code="epicure.pimpam.list.label.title" path="title" width="20%"/>
 	<acme:list-column code="epicure.pimpam.list.label.description" path="description" width="30%"/>
+	
 </acme:list>
+
+<acme:button code="epicure.pimpam.list.button.create" action="/epicure/pimpam/create"/>
+

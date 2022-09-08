@@ -22,6 +22,19 @@ epicure.pimpam.form.label.finishPeriod=Final periodo
 epicure.pimpam.form.label.budget=Presupuesto
 epicure.pimpam.form.label.link=Link
 
+epicure.pimpam.form.label.select.artifact = Artifacto
+epicure.pimpam.form.label.artifact=Artifacto
+
+epicure.pimpam.form.button.create = Crear
+epicure.pimpam.form.button.update = Actualizar
+epicure.pimpam.form.button.delete = Borrar
+epicure.pimpam.list.button.create = Crear
+
+epicure.pimpam.error.month.startPeriod = El comienzo del periodo debe ser mayor a un mes desde la creación del pimpam
+epicure.pimpam.error.week.finishPeriod = El final del periodo debe ser mayor a una semana desde el comienzo del periodo
+epicure.pimpam.error.budget=El presupuesto tiene que ser positivo
+epicure.pimpam.not-able-currency = La moneda no es válida
+
 any.arifact.list.button.create = Crear
 chef.artifact.form.button.create = Crear
 chef.artifact.form.button.update = Actualizar

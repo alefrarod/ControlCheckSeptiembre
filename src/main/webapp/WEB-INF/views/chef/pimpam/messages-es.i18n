@@ -25,6 +25,13 @@ chef.pimpam.form.label.link=Link
 chef.pimpam.form.label.select.artifact = Artifacto
 chef.pimpam.form.label.artifact=Artifacto
 
+chef.pimpam.form.button.create = Crear
+chef.pimpam.form.button.update = Actualizar
+chef.pimpam.form.button.delete = Borrar
+chef.pimpam.list.button.create = Crear
+
+
+
 chef.pimpam.error.month.startPeriod = El comienzo del periodo debe ser mayor a un mes desde la creación del pimpam
 chef.pimpam.error.week.finishPeriod = El final del periodo debe ser mayor a una semana desde el comienzo del periodo
 chef.pimpam.error.budget=El presupuesto tiene que ser positivo
@@ -35,10 +42,7 @@ chef.artifact.form.button.create = Crear
 chef.artifact.form.button.update = Actualizar
 chef.artifact.form.button.delete = Eliminar
 chef.artifact.form.button.publish = Publicar
-chef.pimpam.form.button.create = Crear
-chef.pimpam.form.button.update = Actualizar
-chef.pimpam.form.button.delete = Borrar
-chef.pimpam.list.button.create = Crear
+
 
 chef.artifact.retailPrice.not-able-currency = Moneda no aceptada
 chef.artifact.retailPrice.null = El precio de venta es obligatorio
