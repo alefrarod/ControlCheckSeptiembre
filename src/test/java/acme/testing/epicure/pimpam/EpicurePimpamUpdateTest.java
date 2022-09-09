@@ -11,13 +11,14 @@ public class EpicurePimpamUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/epicure/pimpam/create.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positive(final int recordIndex, final String title, final String description,
+	public void positive(final int recordIndex,final String code, final String title, final String description,
 		final String startPeriod, final String finishPeriod , final String budget, final String link) {
 		super.signIn("epicure1", "epicure1");
 		super.clickOnMenu("Epicure", "Pimpam");
 		super.checkListingExists();
 		
 		super.clickOnButton("Create");
+		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("startPeriod", startPeriod);

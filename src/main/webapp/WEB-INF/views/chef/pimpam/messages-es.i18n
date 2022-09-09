@@ -25,6 +25,8 @@ chef.pimpam.form.label.link=Link
 chef.pimpam.form.label.select.artifact = Artifacto
 chef.pimpam.form.label.artifact=Artifacto
 
+chef.pimpam.form.error.code-date=Código inválido
+
 chef.pimpam.form.button.create = Crear
 chef.pimpam.form.button.update = Actualizar
 chef.pimpam.form.button.delete = Borrar

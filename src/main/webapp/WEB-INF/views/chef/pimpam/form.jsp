@@ -18,6 +18,7 @@
 <jstl:choose>
 <jstl:when test="${isNew == true}">	
 <acme:form>
+<acme:input-textbox code="chef.pimpam.form.label.code" path="code" placeholder="yyXXXX/MM/dd"/>
 	<acme:input-textbox code="chef.pimpam.form.label.title" path="title" />
 	<acme:input-textbox code="chef.pimpam.form.label.description" path="description" />
 	<acme:input-textbox code="chef.pimpam.form.label.startPeriod" path="startPeriod" />

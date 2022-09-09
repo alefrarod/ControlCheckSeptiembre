@@ -40,6 +40,8 @@ chef.artifact.form.button.update = Update
 chef.artifact.form.button.delete = Delete
 chef.artifact.form.button.publish = Publish
 
+chef.pimpam.form.error.code-date=Invalid code
+
 chef.artifact.retailPrice.not-able-currency = Currency not accepted
 chef.artifact.retailPrice.null = The retail price is required
 chef.artifact.code.repeated = This code already exists

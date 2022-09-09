@@ -33,7 +33,7 @@ protected static final long		serialVersionUID	= 1L;
 	
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "^[0-9]{2}/[0-9]{2}/[0-9]{2}$")
+	@Pattern(regexp = "^[0-9]{2}+[A-Z]{4}/[0-9]{2}/[0-9]{2}$")
 	protected String code;
 	
 	@NotNull

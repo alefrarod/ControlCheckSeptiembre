@@ -49,15 +49,15 @@ public class PimpamChefCreateService implements AbstractCreateService<Chef, Pimp
 
 		
 		
-		request.bind(entity, errors, "title", "description", "startPeriod", "finishPeriod", "budget", "link");
+		request.bind(entity, errors,"code", "title", "description", "startPeriod", "finishPeriod", "budget", "link");
 		
 		Model model;
 		Artifact selectedArtifact;
 
 		model = request.getModel();
 		selectedArtifact = this.repository.findArtifactById(Integer.parseInt(model.getString("artifacts")));
-
 		entity.setArtifact(selectedArtifact);
+		
 
 	}
 
@@ -77,7 +77,8 @@ public class PimpamChefCreateService implements AbstractCreateService<Chef, Pimp
 		
 		artifacts=this.repository.findAllArtifact();	
 	
-		request.unbind(entity, model, "title", "description", "startPeriod", "finishPeriod", "budget", "link");
+		request.unbind(entity, model,"code", "title", "description", "startPeriod", "finishPeriod", "budget", "link");
+		
 		
 		model.setAttribute("isNew", true);
 		model.setAttribute("artifacts", artifacts.stream().filter(x->!x.isPublished()).filter(y->!la.contains(y)).collect(Collectors.toList()));
@@ -92,10 +93,11 @@ public class PimpamChefCreateService implements AbstractCreateService<Chef, Pimp
 		
 		
 		result = new Pimpam();
-		LocalDate localDate = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy/MM/dd");
-		String formattedString = localDate.format(formatter);
-		result.setCode(formattedString);
+//		LocalDate localDate = LocalDate.now();
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy/MM/dd");
+//		String formattedString = localDate.format(formatter);
+//		String[] ss=formattedString.split("/");
+//		result.setCode(ss[0]+"XXXX"+"/"+ss[1]+"/"+ss[2]);
 		result.setInstantiationMoment(Calendar.getInstance().getTime());
 		
 		return result;
@@ -134,7 +136,30 @@ public class PimpamChefCreateService implements AbstractCreateService<Chef, Pimp
 		}
 		
 		
-		
+		if(!errors.hasErrors("code")) {
+            final Date im = entity.getInstantiationMoment();
+            final Calendar calendar = Calendar.getInstance();
+            calendar.setTime(im);
+            
+            
+            final String[] fecha = entity.getCode().split("/");
+            final Integer dia = Integer.parseInt(fecha[2]);
+            final Integer mes = Integer.parseInt(fecha[1]);
+            final Integer anyo = Integer.parseInt(fecha[0].substring(0, 2));
+            
+            final String year = String.valueOf(calendar.get(Calendar.YEAR));
+            final char[] digitsYear = year.toCharArray();
+            final String ten = digitsYear[2] + "";
+            final String one = digitsYear[3] +"";
+            final String yearTwoDigits = ten + one;
+            
+            final Integer month = calendar.get(Calendar.MONTH) + 1;
+            final Integer day = calendar.get(Calendar.DAY_OF_MONTH);
+
+            final Boolean result = (dia.equals(day)) && (mes.equals(month)) && (anyo.equals(Integer.parseInt(yearTwoDigits)));
+            
+            errors.state(request, result, "code", "chef.pimpam.form.error.code-date");
+        }
 		
 
 		
