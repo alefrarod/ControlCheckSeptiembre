@@ -118,41 +118,41 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			minimumFineDishBudget.put(status, minimumBudgetFormat != null ? minimumBudgetFormat : 0);
 		}
 		
-		final Map<String,Double> averagePimpamBudget = new HashMap<String, Double>();
+		final Map<String,Double> averageDelorBudget = new HashMap<String, Double>();
 		for(final String currencies : acceptedCurrencies) {
-			final Double averageBudget = this.repository.calcAveragePimpamBudgetByCurrency(currencies);
+			final Double averageBudget = this.repository.calcAverageDelorBudgetByCurrency(currencies);
 			final Double averageBudgetFormat = this.formatDouble(averageBudget);
-			averagePimpamBudget.put(currencies, averageBudgetFormat != null ? averageBudgetFormat : 0);
+			averageDelorBudget.put(currencies, averageBudgetFormat != null ? averageBudgetFormat : 0);
 		}
 		
-		final Map<String,Double> deviationPimpamBudget = new HashMap<String, Double>();
+		final Map<String,Double> deviationDelorBudget = new HashMap<String, Double>();
 		for(final String currencies : acceptedCurrencies) {
-			final Double deviationBudget = this.repository.calcDeviationPimpamBudgetByCurrency(currencies);
+			final Double deviationBudget = this.repository.calcDeviationDelorBudgetByCurrency(currencies);
 			final Double deviationBudgetFormat = this.formatDouble(deviationBudget);
-			deviationPimpamBudget.put(currencies, deviationBudgetFormat != null ? deviationBudgetFormat : 0);
+			deviationDelorBudget.put(currencies, deviationBudgetFormat != null ? deviationBudgetFormat : 0);
 		}
 		
-		final Map<String,Double> maximumPimpamBudget = new HashMap<String, Double>();
+		final Map<String,Double> maximumDelorBudget = new HashMap<String, Double>();
 		for(final String currencies : acceptedCurrencies) {
-			final Double maximumBudget = this.repository.calcMaximumPimpamBudgetByCurrency(currencies);
+			final Double maximumBudget = this.repository.calcMaximumDelorBudgetByCurrency(currencies);
 			final Double maximumBudgetFormat = this.formatDouble(maximumBudget);
-			maximumPimpamBudget.put(currencies, maximumBudgetFormat != null ? maximumBudgetFormat : 0);
+			maximumDelorBudget.put(currencies, maximumBudgetFormat != null ? maximumBudgetFormat : 0);
 		}
 		
-		final Map<String,Double> minimumPimpamBudget = new HashMap<String, Double>();
+		final Map<String,Double> minimumDelorBudget = new HashMap<String, Double>();
 		for(final String currencies : acceptedCurrencies) {
-			final Double minimumBudget = this.repository.calcMinimumPimpamBudgetByCurrency(currencies);
+			final Double minimumBudget = this.repository.calcMinimumDelorBudgetByCurrency(currencies);
 			final Double minimumBudgetFormat = this.formatDouble(minimumBudget);
-			minimumPimpamBudget.put(currencies, minimumBudgetFormat != null ? minimumBudgetFormat : 0);
+			minimumDelorBudget.put(currencies, minimumBudgetFormat != null ? minimumBudgetFormat : 0);
 		}
 		
-		final Integer nArtifacts = this.repository.findAllArtifact().size();
-		final Integer nPimpams = this.repository.findAllPimpam().size();
-		Double ratioOfArtifactsWithPimpam = (double) nPimpams / nArtifacts;
+		final Integer nArtifacts = this.repository.findAllArtifactByStatus(ArtifactType.INGREDIENT).size();
+		final Integer nDelor = this.repository.findAllDelor().size();
+		Double ratioOfArtifactsWithDelor = (double) nDelor / nArtifacts;
 		
 		
 		
-		result.setRatioOfArtifactsWithPimpam(nArtifacts>0? ratioOfArtifactsWithPimpam:0.);		
+		result.setRatioOfArtifactsWithDelor(nArtifacts>0? ratioOfArtifactsWithDelor:0.);		
 		result.setTotalArtifact(totalArtifact);
 		result.setAverageArtifactRetailPrice(averageArtifactRetailPrice);
 		result.setDeviationArtifactRetailPrice(deviationArtifactRetailPrice);
@@ -163,10 +163,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setDeviationFineDishBudget(deviationFineDishBudget);
 		result.setMaximumFineDishBudget(maximumFineDishBudget);
 		result.setMinimumFineDishBudget(minimumFineDishBudget);
-		result.setAveragePimpamBudget(averagePimpamBudget);
-		result.setDeviationPimpamBudget(deviationPimpamBudget);
-		result.setMaximumPimpamBudget(maximumPimpamBudget);
-		result.setMinimumPimpamBudget(minimumPimpamBudget);
+		result.setAverageDelorBudget(averageDelorBudget);
+		result.setDeviationDelorBudget(deviationDelorBudget);
+		result.setMaximumDelorBudget(maximumDelorBudget);
+		result.setMinimumDelorBudget(minimumDelorBudget);
 		return result;
 	}
 	
@@ -182,9 +182,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		request.unbind(entity, model, "totalArtifact", "averageArtifactRetailPrice", "deviationArtifactRetailPrice"
 			, "minimumArtifactRetailPrice", "maximumArtifactRetailPrice", "totalFineDish", "averageFineDishBudget",
-			"deviationFineDishBudget", "maximumFineDishBudget", "minimumFineDishBudget", "ratioOfArtifactsWithPimpam", 
-			"averagePimpamBudget",
-			"deviationPimpamBudget", "maximumPimpamBudget", "minimumPimpamBudget");
+			"deviationFineDishBudget", "maximumFineDishBudget", "minimumFineDishBudget", "ratioOfArtifactsWithDelor", 
+			"averageDelorBudget",
+			"deviationDelorBudget", "maximumDelorBudget", "minimumDelorBudget");
 		
 		model.setAttribute("acceptedCurrencies", this.repository.findAcceptedCurrencies().split(","));
 		model.setAttribute("artifactTypes", ArtifactType.values());

@@ -132,7 +132,7 @@ table {
 
 <h2>
 		
-			Pimpam 
+			Delor 
 	</h2>
 <table>
 <caption>Ratio</caption> 
@@ -140,7 +140,7 @@ table {
 		<th scope="row"><acme:message
 				code="administrator.dashboard.form.label.ratio-of-artifacts" />
 		</th>
-		<td>${ratioOfArtifactsWithPimpam}</td>
+		<td>${ratioOfArtifactsWithDelor}</td>
 	</tr>
 </table>
 	
@@ -157,28 +157,28 @@ table {
 		<td><acme:message
 				code="administrator.dashboard.averagePimpamBudget" /></td>
 		<jstl:forEach var="currency" items="${acceptedCurrencies}">
-			<td>${averagePimpamBudget.get(currency)}</td>
+			<td>${averageDelorBudget.get(currency)}</td>
 		</jstl:forEach>
 	</tr>
 	<tr>
 		<td><acme:message
 				code="administrator.dashboard.deviationPimpamBudget" /></td>
 		<jstl:forEach var="currency" items="${acceptedCurrencies}">
-			<td>${deviationPimpamBudget.get(currency)}</td>
+			<td>${deviationDelorBudget.get(currency)}</td>
 		</jstl:forEach>
 	</tr>
 	<tr>
 		<td><acme:message
 				code="administrator.dashboard.maximumPimpamBudget" /></td>
 		<jstl:forEach var="currency" items="${acceptedCurrencies}">
-			<td>${maximumPimpamBudget.get(currency)}</td>
+			<td>${maximumDelorBudget.get(currency)}</td>
 		</jstl:forEach>
 	</tr>
 	<tr>
 		<td><acme:message
 				code="administrator.dashboard.minimumPimpamBudget" /></td>
 		<jstl:forEach var="currency" items="${acceptedCurrencies}">
-			<td>${minimumPimpamBudget.get(currency)}</td>
+			<td>${minimumDelorBudget.get(currency)}</td>
 		</jstl:forEach>
 	</tr>
 </table>

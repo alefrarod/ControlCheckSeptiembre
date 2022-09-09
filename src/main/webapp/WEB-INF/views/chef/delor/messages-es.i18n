@@ -1,0 +1,55 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+chef.delor.list.label.keylet=Keylet
+chef.delor.list.label.instantiationMoment=Fecha de creación
+chef.delor.list.label.Subject=Subject
+chef.delor.list.label.explanation=Explanation
+
+chef.delor.form.label.keylet=Keylet
+chef.delor.form.label.instantiationMoment=Fecha de creación
+chef.delor.form.label.subject=Subject
+chef.delor.form.label.explanation=Explanation
+chef.delor.form.label.startPeriod=Comienzo periodo
+chef.delor.form.label.finishPeriod=Final periodo
+chef.delor.form.label.income=Presupuesto
+chef.delor.form.label.moreInfo=Más información
+chef.delor.form.label.select.artifact = Artifacto
+chef.delor.form.label.artifact=Artifacto
+
+chef.delor.form.error.code-date=Código inválido
+
+chef.delor.form.button.create = Crear
+chef.delor.form.button.update = Actualizar
+chef.delor.form.button.delete = Borrar
+chef.delor.list.button.create = Crear
+
+
+
+chef.delor.error.month.startPeriod = El comienzo del periodo debe ser mayor a un mes desde la creación del pimpam
+chef.delor.error.week.finishPeriod = El final del periodo debe ser mayor a una semana desde el comienzo del periodo
+chef.delor.error.budget=El presupuesto tiene que ser positivo
+chef.delor.not-able-currency = La moneda no es válida
+chef.delor.error.duplicatecode = Keylet duplicado
+
+any.arifact.list.button.create = Crear
+chef.artifact.form.button.create = Crear
+chef.artifact.form.button.update = Actualizar
+chef.artifact.form.button.delete = Eliminar
+chef.artifact.form.button.publish = Publicar
+
+
+chef.artifact.retailPrice.not-able-currency = Moneda no aceptada
+chef.artifact.retailPrice.null = El precio de venta es obligatorio
+chef.artifact.code.repeated = Este código ya existe
+chef.artifact.code.repeated.retailPrice.non-negative = El precio de venta debe ser positivo
+chef.artifact.error.name.spam-threshold = Nombre por encima del umbral del spam
+chef.artifact.error.description.spam-threshold = Descripción por encima del umbral del spam
